@@ -1,0 +1,75 @@
+#!/bin/bash
+
+###########################################################################
+#  CLI (command line tools to ease some devops tasks)
+###########################################################################
+
+CLI_PATH="$(dirname "$0")"
+
+#--------------------------------------------------------------------
+# Configuration
+#--------------------------------------------------------------------
+export cli_path="/usr/local/sbin/"
+export plugins_path="/usr/local/sbin/clish/"
+export php_cli=$(which php)
+export github_email_account=$(git config user.email)
+export echocommand="true"
+
+#--------------------------------------------------------------------
+# Parameters
+#--------------------------------------------------------------------
+export fn=$1
+export firstParameter=$2
+export secondParameter=$3
+#export allParameters=${@:2}
+
+#--------------------------------------------------------------------
+# Colors
+#--------------------------------------------------------------------
+export GREEN='\033[0;32m'
+export GRAY='\033[0;37m'
+export LIGHTBLUE='\033[1;34m'
+export LIGHTGREEN='\033[1;32m'
+export WHITEBOLD='\033[1;37m'
+export RED='\033[1;31m'
+export NC='\033[0m' # No Color
+
+#--------------------------------------------------------------------
+# List of Commands
+#--------------------------------------------------------------------
+
+COMMANDS=(
+    list
+    system:update
+    db:user:create
+    db:backup
+    wp:install
+    wp:update
+)
+
+## ---- END OF COMMANDS; Comment required for bash_completion------
+
+if [ -z "$fn" ] || [[ "$#" -lt "1" ]]; then
+    fn="list"
+fi
+
+#--------------------------------------------------------------------
+# Catch command not found
+#--------------------------------------------------------------------
+
+if [[ ! " ${COMMANDS[@]} " =~ " ${fn} " ]]; then
+    echo -e "${RED}Command not found: '${fn}' $(test ! -z "$allParameters" -a "$allParameters" != " " && echo "\nParameters: $allParameters" || echo "")${NC}"
+    read -p "Choose a category for which to list help/usage... ($(categoriesList)) " category # Ask user for a category to print usage
+
+    if [ ! -z "${category}" ]; then
+        echo -e "$(usageList ${category})\n" # Show help/usage for user-selected category
+        echo -e "$(printAdditionalHelp)"
+    else
+        kill -INT $$ # Exit
+    fi
+fi
+
+source "$CLI_PATH/dev-cli/plugins/list.sh"
+source "$CLI_PATH/dev-cli/plugins/system.sh"
+source "$CLI_PATH/dev-cli/plugins/db.sh"
+source "$CLI_PATH/dev-cli/plugins/wordpress.sh"
