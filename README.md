@@ -13,7 +13,8 @@
 
 ### System
 
-`cli system:update`: Update system, softwares and kernel"
+`cli system:update`: Update system, upgrade softwares
+`cli system:fullupdate`: Update system, upgrade softwares and kernel"
 
 ---
 
@@ -30,6 +31,11 @@
 `cli db:user:create`: Create new user with prompted informations"
 
 ---
+
+### RKhunter
+
+`cli rkhunter`: update and execute rkhunter 
+`cli rkhunter:cronjob`: update and execute rkhunter crontask with output as mail
 
 ### Nginx, Apache, MySQL, PHP
 

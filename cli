@@ -41,10 +41,13 @@ export NC='\033[0m' # No Color
 COMMANDS=(
     list
     system:update
+    system:fullupdate
     db:user:create
     db:backup
     wp:install
     wp:update
+    rkhunter
+    rkhunter:cronjob
 )
 
 ## ---- END OF COMMANDS; Comment required for bash_completion------
