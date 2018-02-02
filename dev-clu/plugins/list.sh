@@ -20,3 +20,9 @@ case "$fn" in
         echo -e "${LIGHTBLUE}cli rkhunter:cronjob{GRAY}: update and execute rkhunter as cronjob, if output, send an email"
  ;;
 esac
+
+case "$fn" in
+    "help")
+        echo -e "To be continued"
+ ;;
+esac
