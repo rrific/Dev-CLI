@@ -10,7 +10,7 @@ CLI_PATH="$(dirname "$0")"
 # Configuration
 #--------------------------------------------------------------------
 export cli_path="/usr/local/sbin/"
-export plugins_path="/usr/local/sbin/clish/"
+export plugins_path="/usr/local/sbin/dev-clu/"
 export php_cli=$(which php)
 export github_email_account=$(git config user.email)
 export echocommand="true"
@@ -72,8 +72,8 @@ if [[ ! " ${COMMANDS[@]} " =~ " ${fn} " ]]; then
     fi
 fi
 
-source "$CLI_PATH/dev-cli/plugins/list.sh"
-source "$CLI_PATH/dev-cli/plugins/system.sh"
-source "$CLI_PATH/dev-cli/plugins/db.sh"
-source "$CLI_PATH/dev-cli/plugins/wordpress.sh"
-source "$CLI_PATH/dev-cli/plugins/rkhunter.sh"
+source "$CLI_PATH/dev-clu/plugins/list.sh"
+source "$CLI_PATH/dev-clu/plugins/system.sh"
+source "$CLI_PATH/dev-clu/plugins/db.sh"
+source "$CLI_PATH/dev-clu/plugins/wordpress.sh"
+source "$CLI_PATH/dev-clu/plugins/rkhunter.sh"
