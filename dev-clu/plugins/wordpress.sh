@@ -7,11 +7,11 @@ case "$fn" in
         echo -e "${WHITEBOLD}==================${NC}";
         cd application;
         echo -e "${LIGHTBLUE}Update wp${NC}"
-        wp core update;
+        wp core update --quiet;
         echo -e "${LIGHTBLUE}Update plugins${NC}"
-        wp plugin update --all;
+        wp plugin update --all --quiet;
         echo -e "${LIGHTBLUE}Update translations${NC}"
-        wp core language update;
+        wp core language update --quiet;
         cd ..;
         echo -e "${LIGHTGREEN} Seems ok. Thank you${NC}";
  ;;
