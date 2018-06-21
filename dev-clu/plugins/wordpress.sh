@@ -3,14 +3,14 @@
 case "$fn" in
     # Update Homebrew and installed packages
     "wp:update")
-        echo -e "${LIGHTBLUE}Ready to update wp";
+        echo -e "${LIGHTBLUE}Ready to update wp and plugins";
         echo -e "${WHITEBOLD}==================${NC}";
         cd application;
-        echo -e "${LIGHTBLUE}Update wp${NC}"
+        echo -e "${LIGHTBLUE}Updates wp${NC}"
         wp core update --quiet;
-        echo -e "${LIGHTBLUE}Update plugins${NC}"
+        echo -e "${LIGHTBLUE}Updates plugins${NC}"
         wp plugin update --all --quiet;
-        echo -e "${LIGHTBLUE}Update translations${NC}"
+        echo -e "${LIGHTBLUE}Updates translations${NC}"
         wp core language update --quiet;
         cd ..;
         echo -e "${LIGHTGREEN} Seems ok. Thank you${NC}";
