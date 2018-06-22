@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 case "$fn" in
     # Update and upgrade
@@ -17,6 +17,6 @@ case "$fn" in
         echo -e "====================================================${NC}\n"
         sudo apt-get update
         sudo apt-get -y upgrade
-        sudo apt-get -y upgrade linux-generic linux-headers-generic linux-image-generic
+        sudo apt-get -y dist-upgrade
  ;;
 esac

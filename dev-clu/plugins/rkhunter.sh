@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 case "$fn" in
     # rkhunter : update and execute

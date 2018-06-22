@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 case "$fn" in
     # Update Homebrew and installed packages

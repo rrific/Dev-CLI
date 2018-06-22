@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ###########################################################################
 #  CLI (command line tools to ease some devops tasks)

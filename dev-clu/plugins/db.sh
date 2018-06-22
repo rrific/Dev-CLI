@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 case "$fn" in
     # Create a new user (find another way to execute this safely
