@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -eu
 
 ###########################################################################
 #  CLI (command line tools to ease some devops tasks)
@@ -40,6 +41,7 @@ export NC='\033[0m' # No Color
 
 COMMANDS=(
     list
+    install
     system:update
     system:fullupdate
     db:user:create
@@ -73,6 +75,7 @@ if [[ ! " ${COMMANDS[@]} " =~ " ${fn} " ]]; then
 fi
 
 source "$CLI_PATH/dev-clu/plugins/list.sh"
+source "$CLI_PATH/dev-clu/plugins/install.sh"
 source "$CLI_PATH/dev-clu/plugins/system.sh"
 source "$CLI_PATH/dev-clu/plugins/db.sh"
 source "$CLI_PATH/dev-clu/plugins/wordpress.sh"
