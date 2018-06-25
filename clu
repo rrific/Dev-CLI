@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -eu
 
 ###########################################################################
 #  CLI (command line tools to ease some devops tasks)
